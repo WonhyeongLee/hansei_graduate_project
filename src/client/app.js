@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import ShowDB from './showdb';
 import UploadImage from './upload_image';
+import UploadImage2 from './upload_image2';
 import RecommandFood from './recommand_food';
+
 
 export default class App extends Component{
 constructor(props){
@@ -16,15 +18,18 @@ constructor(props){
     render(){
         //const {username} = this.state;
         return (
-            <div className="App">
-              <header className="App-header">
+            <div className="container">
+              <div className="showApp">
                   <ShowDB />
-                {/* {username ? `Hello ${username}` : 'Hello World'} */}
-              </header>
-              <article className="App-main">
-                <UploadImage />
-                <RecommandFood />
-              </article>
+              </div>
+              <div className="uploadApp">
+                {/* <UploadImage /> */}
+                <UploadImage2 />
+                </div>
+                <div className="recommandApp">
+                {/* <RecommandFood /> */}
+                </div>
+              
             </div>
         );
     }

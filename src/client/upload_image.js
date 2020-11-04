@@ -8,13 +8,14 @@ class UploadImage extends Component {
     this.onDrop = this.onDrop.bind(this);
   }
 
-  onDrop(pictureFiles, pictureDataURLs) {
+  onDrop(pictureFiles, pictureBase64) {
     // picutreFiles에 boundery 정보가 return 되고,
     // pictureBase64 에 base64 정보가 return 된다. 기본 array로 return
     this.setState({
       pictures: this.state.pictures.concat(pictureFiles)
     });
     //ajax 넣는부분
+    console.log(pictureBase64);
   };
   
   render() {
@@ -31,14 +32,15 @@ class UploadImage extends Component {
 
           <ImageUploader
             withIcon={false}
-            withPreview={true}
+            withPreview={false}
             buttonText="Choose images"
             onChange={this.onDrop}
             imgExtension={[".jpg", ".gif", ".png", ".gif"]}
             maxFileSize={5242880}
+            singleImage={true}
           />
         </div>
-
+        
         </div>
 
      </div>
@@ -46,9 +48,6 @@ class UploadImage extends Component {
 
   }
 
-
 }
-
-
 
 export default UploadImage;

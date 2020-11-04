@@ -8,8 +8,13 @@ const port = 3002;
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/api', api);
-app.use('/api1' , (req,res) => res.json({username: 'bryan'}));
+
+app.use('/image' , (req,res) =>{
+    if(!req){
+        res.send("Fail to Upload image");
+    }
+    res.send("success upload image");
+});
 
 app.listen(port, ()=>console.log(`Listening on port ${port}`));
 
