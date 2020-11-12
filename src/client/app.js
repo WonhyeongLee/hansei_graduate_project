@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import ShowDB from './showdb';
 import UploadImage from './upload_image';
-import UploadImage2 from './upload_image2';
 import RecommandFood from './recommand_food';
 
 
@@ -23,8 +22,7 @@ constructor(props){
                   <ShowDB />
               </div>
               <div className="uploadApp">
-                {/* <UploadImage /> */}
-                <UploadImage2 />
+                <UploadImage />
                 </div>
                 <div className="recommandApp">
                 {/* <RecommandFood /> */}

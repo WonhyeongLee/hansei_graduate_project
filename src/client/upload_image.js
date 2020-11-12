@@ -1,53 +1,87 @@
-import React ,{Component}from "react";
-import ImageUploader from "react-images-upload";
+import React ,{Component}from 'react';
+import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
+import { Typography, Button, IconButton } from "@material-ui/core";
+import SaveIcon from "@material-ui/icons/Save";
+import axios from 'axios';
 
-class UploadImage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { pictures: [] };
-    this.onDrop = this.onDrop.bind(this);
+
+class UploadImage2 extends Component {
+    constructor(props) {
+     super(props);
+    this.state = {
+        selectedFile: null,
+        imagePreview: "../../dist/Photo.png"
+    };
   }
 
-  onDrop(pictureFiles, pictureBase64) {
-    // picutreFiles에 boundery 정보가 return 되고,
-    // pictureBase64 에 base64 정보가 return 된다. 기본 array로 return
-    this.setState({
-      pictures: this.state.pictures.concat(pictureFiles)
-    });
-    //ajax 넣는부분
-    console.log(pictureBase64);
-  };
-  
-  render() {
-    return (<div className="upload-image">
-        <h1> 이미지 업로드 테스트</h1>
-        <div
-          style={{
-            display: "flex",
-            border: "1px solid red"
-          }}
-        >
-    
-        <div style={{marginRight: "15px"}}>
 
-          <ImageUploader
-            withIcon={false}
-            withPreview={false}
-            buttonText="Choose images"
-            onChange={this.onDrop}
-            imgExtension={[".jpg", ".gif", ".png", ".gif"]}
-            maxFileSize={5242880}
-            singleImage={true}
-          />
+render(){
+    const imagePreview = this.state.imagePreview;
+    console.log(imagePreview);
+    return(
+        <div className="uploadApp-page">
+
+         <div className="uploadContainer">
+                <h1 className="heading">음식 저장</h1>
+                <div className="img-holder">
+                    <img src={imagePreview} classname="img" id="img" alt="" width="200px" height="200px"/>
+                </div>
+                  <input type="file" id="file" accept="image/*" name="image-upload"
+                                    onChange={this.fileSelectedHandler} />
+                  <div className="label">
+                         <label className="image-upload" htmlFor="file">
+                         <div className="upload-icon"><AddAPhotoIcon fontSize="large"></AddAPhotoIcon> </div>
+                        </label>
+                  </div>
+
+                
+                
+             <div className="btn-send">
+                   <Button variant="contained" color="primary"
+                           onClick={this.fileUploadHandler} startIcon={<SaveIcon fontSize="large"/>}>
+                       Upload image
+                  </Button>
+             </div>
+         </div>
+
         </div>
+
         
-        </div>
+    )
+}
+/* <div className="label">
+<label for="file" className="image-upload">
+<AddAPhotoIcon fontSize="large"></AddAPhotoIcon> 
+</label>
+</div> */
 
-     </div>
-    );
+imageHandler = (e) => {
+    const reader = new FileReader();
+    reader.onload = () =>{
+        if(reader.readyState === 2){
+            this.setState({imagePreview: reader.result})
+            console.log(this.state.imagePreview)
+        }
+    }
+    reader.readAsDataURL(e.target.files[0])
+};
 
-  }
+fileSelectedHandler = (e) => {
+    this.imageHandler(e)
+    this.setState({
+        selectedFile: e.target.files[0]
+    })
+};
+
+fileUploadHandler = () => {
+    const fd = new FormData();
+    fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
+    axios.post('http://127.0.0.1:3002/image', fd)
+    .then(res=>{
+        console.log(res);
+    });
+};
 
 }
 
-export default UploadImage;
+export default UploadImage2;

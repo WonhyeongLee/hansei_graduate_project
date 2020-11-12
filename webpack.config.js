@@ -29,7 +29,7 @@ const moduleObj = {
           test: /\.(jpg|png|gif|svg)$/,
           loader:'file-loader',
           options: {
-            name: '[name].[ext]?[hash]',
+            name: '[name].[ext]',
           }
         },
         // {
@@ -53,6 +53,7 @@ module.exports = {
   };
 
 const client = {
+  
   entry: {
     'client': './src/client/index.js'
   },

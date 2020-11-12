@@ -9,7 +9,7 @@
 body{
   background-color: #512da8;
   background-image: url("./NT_Blurred_04.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 .container {
 	display: grid;
