@@ -23,7 +23,7 @@ app.use('/image' , (req,res) =>{
 });
 
 app.get("/db", (req,res)=>{
-    const sql = "SELECT * FROM refrigerater";
+    const sql = "SELECT * FROM refrigerater WHERE isDeleted = 0";
     conn.query(sql,function(err,rows,fields){
         if(err){
             console.log("DB조회실패" + err);
@@ -33,6 +33,15 @@ app.get("/db", (req,res)=>{
         }
     })
 
+})
+
+app.delete('/db/:id',(req,res)=> {
+    let sql = 'UPDATE refrigerater SET isDeleted  = 1 WHERE id = ?';
+    let params = [req.params.id];
+    conn.query(sql, params,
+        (err, rows, fields)=> {
+            res.send(rows);
+        })
 })
 
 app.listen(port, ()=>console.log(`Listening on port ${port}`));

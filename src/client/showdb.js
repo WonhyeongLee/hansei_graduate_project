@@ -28,7 +28,16 @@ class ShowDB extends Component{
         this.handleClickOpen = this.handleClickOpen.bind(this)
         this.handleValueChange = this.handleValueChange.bind(this)
         this.handleClose = this.handleClose.bind(this);
+        this.stateRefresh = this.stateRefresh.bind(this);
     }
+
+    stateRefresh(){
+        this.setState({
+            dbdatas:""
+        });
+        this.getDatas();
+    }
+
     getDatas = async () =>{
         const foods = await fetch("http://localhost:3002/db",{
             method: "get", 
@@ -55,17 +64,6 @@ class ShowDB extends Component{
         this.setState({
             open:true
         });
-        // fetch("http://localhost:3002/db",{
-        //     method: "get",
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        //     body: JSON.stringify(),
-        // })
-        //     .then((res)=>res.json())
-        //     .then((json)=>{
-        //         console.log(json);
-        //     })
     }
     handleClose() {
         this.setState({
@@ -88,11 +86,12 @@ class ShowDB extends Component{
                                     <TableCell>이름</TableCell>
                                     <TableCell>종류</TableCell>
                                     <TableCell>수량</TableCell>
+                                    <TableCell>옵션</TableCell>
                                 </TableRow>
                            </TableHead>
                            <TableBody>
                                 {this.state.dbdatas ? this.state.dbdatas.map(c=>{
-                                    return <ShowData id={c.id} food={c.food} type={c.type} quantity={c.quantity} /> 
+                                    return <ShowData stateRefresh={this.stateRefresh} id={c.id} food={c.food} type={c.type} quantity={c.quantity} /> 
                                 }):""}
                            </TableBody>
                     </DialogContent>
