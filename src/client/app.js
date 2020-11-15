@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import ShowDB from './showdb';
 import UploadImage from './upload_image';
+import {Route , Link} from 'react-router-dom';
+import ResultData from './foodRecognition';
 import RecommandFood from './recommand_food';
 
 
@@ -18,16 +20,16 @@ constructor(props){
         //const {username} = this.state;
         return (
             <div className="container">
+
               <div className="showApp">
-                  <ShowDB />
+                  {/* <ShowDB /> */}
               </div>
               <div className="uploadApp">
-                <UploadImage />
+                {/* <UploadImage /> */}
                 </div>
                 <div className="recommandApp">
                 {/* <RecommandFood /> */}
                 </div>
-              
             </div>
         );
     }

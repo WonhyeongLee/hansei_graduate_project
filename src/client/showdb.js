@@ -73,7 +73,7 @@ class ShowDB extends Component{
 
     render(){
         return(
-           <div>
+           <div className="btn-showDB">
                 <Button variant="contained" className="btn-db" onClick={this.handleClickOpen}> 
                 <StorefrontIcon fontSize="large" className="btn-db-icon"></StorefrontIcon>내 냉장고
                 </Button>

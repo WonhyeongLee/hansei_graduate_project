@@ -2,10 +2,12 @@ import React ,{Component}from 'react';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import { Typography, Button, IconButton } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
+import {Route , Link} from 'react-router-dom';
+import ResultData from './foodRecognition';
 import axios from 'axios';
 
 
-class UploadImage2 extends Component {
+class UploadImage extends Component {
     constructor(props) {
      super(props);
     this.state = {
@@ -17,7 +19,6 @@ class UploadImage2 extends Component {
 
 render(){
     const imagePreview = this.state.imagePreview;
-    console.log(imagePreview);
     return(
         <div className="uploadApp-page">
 
@@ -37,23 +38,20 @@ render(){
                 
                 
              <div className="btn-send">
+             <Link to ="/result">  
                    <Button variant="contained" color="primary"
                            onClick={this.fileUploadHandler} startIcon={<SaveIcon fontSize="large"/>}>
                        Upload image
                   </Button>
+            </Link>
              </div>
          </div>
-
+         <Route path="/result" component={ResultData} />
         </div>
 
         
     )
 }
-/* <div className="label">
-<label for="file" className="image-upload">
-<AddAPhotoIcon fontSize="large"></AddAPhotoIcon> 
-</label>
-</div> */
 
 imageHandler = (e) => {
     const reader = new FileReader();
@@ -74,6 +72,7 @@ fileSelectedHandler = (e) => {
 };
 
 fileUploadHandler = () => {
+    
     const fd = new FormData();
     fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
     axios.post('http://127.0.0.1:3002/image', fd)
@@ -84,4 +83,4 @@ fileUploadHandler = () => {
 
 }
 
-export default UploadImage2;
+export default UploadImage;

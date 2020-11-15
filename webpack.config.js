@@ -48,7 +48,8 @@ module.exports = {
       contentBase: path.join(__dirname, "/dist/"),
       host: "localhost",
       inline: true,
-      port: 5000,
+      port: 3000,
+      historyApiFallback: true,
     },
   };
 
