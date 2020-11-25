@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import ShowDB from './showdb';
-import UploadImage from './upload_image';
-import {Route , Link} from 'react-router-dom';
+import UploadImage from './UploadImage';
 import ResultData from './foodRecognition';
 import RecommandFood from './recommand_food';
 
@@ -22,16 +21,18 @@ constructor(props){
             <div className="container">
 
               <div className="showApp">
-                  {/* <ShowDB /> */}
+                  <ShowDB />
               </div>
               <div className="uploadApp">
-                {/* <UploadImage /> */}
+                <UploadImage />
                 </div>
                 <div className="recommandApp">
-                {/* <RecommandFood /> */}
+                {/* <RecommandFood /> 음식추천 , 어디에 넣지 ? */}
                 </div>
             </div>
         );
     }
 }
+
+
 

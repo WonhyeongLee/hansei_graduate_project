@@ -3,11 +3,8 @@ import React ,{Component}from 'react';
 import Button from '@material-ui/core/Button';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import TextField from '@material-ui/core/TextField';
-import { withStyles } from '@material-ui/core/styles';
 import { DialogContentText, TableBody, TableHead } from '@material-ui/core';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
@@ -26,7 +23,6 @@ class ShowDB extends Component{
             open:false
         }
         this.handleClickOpen = this.handleClickOpen.bind(this)
-        this.handleValueChange = this.handleValueChange.bind(this)
         this.handleClose = this.handleClose.bind(this);
         this.stateRefresh = this.stateRefresh.bind(this);
     }
@@ -57,9 +53,6 @@ class ShowDB extends Component{
         this.getDatas()
     }
 
-    handleValueChange(e) {
-
-    }
     handleClickOpen(){
         this.setState({
             open:true

@@ -6,12 +6,15 @@ const bodyParser = require('body-parser');
 const db_config = require('./config/dbconfig');
 const conn = db_config.init();
 const cors = require('cors');
+const multer = require('multer');
+const upload = multer()
 const port = 3002;
 
 db_config.connect(conn);
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api',api);
 
@@ -34,6 +37,21 @@ app.get("/db", (req,res)=>{
     })
 
 })
+//DB에 데이터 추가하는 부분
+app.post('/db/items', upload.array(), (req,res) => {
+    let sql = 'INSERT INTO refrigerater (food,type,quantity) VALUE(?,?,?)';
+    let name = req.body.name;
+    let value = req.body.value;
+
+    console.log(name);
+    console.log(req.body.value);
+
+    let params = [name,'테스트',value];
+    conn.query(sql,params,
+        (err,rows,fields)=>{
+            res.send(rows);
+        })
+});
 
 app.delete('/db/:id',(req,res)=> {
     let sql = 'UPDATE refrigerater SET isDeleted  = 1 WHERE id = ?';

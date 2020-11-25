@@ -4,6 +4,6 @@
         "@babel/preset-react"
     ],
     "plugins": [
-        "react-html-attrs"
+        "react-html-attrs",
     ]
 }

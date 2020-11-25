@@ -8,7 +8,7 @@ const moduleObj = {
     rules: [
         {
             test: /\.(js|jsx|css)$/,
-            exclude: /node_modules/,
+            exclude:path.resolve(__dirname, "node_modules"),
             loader : 'babel-loader',
             options: {
                 presets: ['@babel/env', '@babel/preset-react'],
@@ -16,6 +16,11 @@ const moduleObj = {
                   "@babel/plugin-proposal-class-properties"
                   ]
               }
+        },
+        {
+          test: /\.js$/,
+          enforce: 'pre',
+          use: ['source-map-loader'],
         },
         {
           test: /\.css$/,
@@ -58,7 +63,7 @@ const client = {
   entry: {
     'client': './src/client/index.js'
   },
-  target: 'web',
+  target: 'node',
   mode: "development",
   module: moduleObj,
   resolve: {
@@ -73,7 +78,8 @@ const client = {
     new HtmlWebPackPlugin({
       template: 'src/client/index.html'
     }),
-    new MiniCssExtractPlugin({ filename: 'app.css' })
+    new MiniCssExtractPlugin({ filename: 'app.css' }),
+
   ]
 }
 const server = {
