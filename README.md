@@ -11,5 +11,18 @@
 빌드, 배포  : AWS S3 + CloudFront
 
 
+테스트실행 
+
+  1. npm install 
+  
+  2. npm run build
+  
+  3. npm run start 
+  
+  4. server/ 경로로 이동해서 node ./server.js 
+     (로컬 DB라 아직 나빼고 테스트 불가능)
+  
+  
+
 
 
