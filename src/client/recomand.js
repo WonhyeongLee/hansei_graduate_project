@@ -40,16 +40,19 @@ class Recomand extends Component{
         var 최종추천음식=[];
 
        for(var m=0; m<추천음식.length;m++){
+           var cnt2=0;
 
            for(var l=0; l<추천음식[m].value.length; l++){
 
                 for(var a=0; a<data.length;a++){
 
                     if(추천음식[m].value[l].tag==lists[a]){
-
-                        최종추천음식.push(<li>{추천음식[m].label}</li>);
+                        cnt+1                        
                     }
                 }
+            }
+            if(cnt2==lists.length){
+            최종추천음식.push(<li>{추천음식[m].label}</li>);
             }
 
        }
