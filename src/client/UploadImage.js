@@ -78,7 +78,8 @@ _setResultDiv = (res) => {
 }
 _setDefaltImage = (res) => {
     this.setState({
-        imagePreview:res
+        imagePreview:res,
+        selectedFile:null
     })
 }
 
@@ -87,6 +88,7 @@ setResultDiv = () => {
     console.log(this.state.resultDivState);
     if(this.state.resultDivState == false){
         this.setState({resultDivState:true})
+        this.init();
     }else{
         this.setState({resultDivState:false})
     }
@@ -111,7 +113,6 @@ fileSelectedHandler = (e) => {
 
 sendTensorFlow = () => {
     { this.state.selectedFile == null ? console.log("사진이 없습니다.") : this.setResultDiv() }
-    this.init();
     console.log(this.state.selectedFile);
     console.log(this.state.resultDivState);
 };
@@ -129,6 +130,7 @@ sendTensorFlow = () => {
 //학습모델 불러옴
 async init() {
     console.log("init 이벤트 발생");
+    
     const modelURL = this.state.url + "model.json";
     const metadataURL = this.state.url + "metadata.json";
 

@@ -1,5 +1,4 @@
 import React , { useState,useRef }from 'react';
-import {Route,Link}from 'react-router-dom';
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import { Button } from "@material-ui/core";
 import TextField from '@material-ui/core/TextField';
@@ -115,9 +114,7 @@ export default function ResultData(props) {
                         재촬영
                     </div> */}
                 </div>
-                <Link to="/">
                 <div className="save-db">
-                        
                         <Button variant="contained"
                                 type="submit"
                                 onClick={handleSubmit}
@@ -129,10 +126,8 @@ export default function ResultData(props) {
                         </Button>
                         
                 </div>
-                </Link>
                 {/* <p> 인식결과 : {resultFoodName} 수량 : {value} </p> */}
             </div>
-            <Route path="/" component={App} exact="true" />
         </div>
     );
 }

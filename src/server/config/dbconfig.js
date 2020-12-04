@@ -1,11 +1,11 @@
 const mysql = require('mysql');
 
 const db_info= { 
-        host:'localhost', 
+        host:'hansei.c0ge5afzoxmy.us-east-2.rds.amazonaws.com', 
         port:'3306', 
         user:'kkwon57', 
-        password:'!q2w3e4r', 
-        database:'foods'};
+        password:'1q2w3e4r', 
+        database:'hansei'};
 
 module.exports = {
         init: function () {

@@ -11,7 +11,6 @@ const upload = multer()
 const port = 3002;
 
 db_config.connect(conn);
-
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,7 +25,7 @@ app.use('/image' , (req,res) =>{
 });
 
 app.get("/db", (req,res)=>{
-    const sql = "SELECT * FROM refrigerater WHERE isDeleted = 0";
+    const sql = "SELECT * FROM refrigerater";
     conn.query(sql,function(err,rows,fields){
         if(err){
             console.log("DB조회실패" + err);
@@ -39,14 +38,14 @@ app.get("/db", (req,res)=>{
 })
 //DB에 데이터 추가하는 부분
 app.post('/db/items', upload.array(), (req,res) => {
-    let sql = 'INSERT INTO refrigerater (food,type,quantity) VALUE(?,?,?)';
+    let sql = 'INSERT INTO refrigerater VALUE(?,?,?,?)';
     let name = req.body.name;
     let value = req.body.value;
 
     console.log(name);
     console.log(req.body.value);
 
-    let params = [name,'테스트',value];
+    let params = [null,name,'테스트',value];
     conn.query(sql,params,
         (err,rows,fields)=>{
             res.send(rows);
@@ -54,7 +53,7 @@ app.post('/db/items', upload.array(), (req,res) => {
 });
 
 app.delete('/db/:id',(req,res)=> {
-    let sql = 'UPDATE refrigerater SET isDeleted  = 1 WHERE id = ?';
+    let sql = 'DELETE FROM refrigerater WHERE id = ?';
     let params = [req.params.id];
     conn.query(sql, params,
         (err, rows, fields)=> {
@@ -63,7 +62,3 @@ app.delete('/db/:id',(req,res)=> {
 })
 
 app.listen(port, ()=>console.log(`Listening on port ${port}`));
-
-// app.get("/*", function (req,res){
-//     res.sendFile(__dirname + "../../dist/index.html");
-// });

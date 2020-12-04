@@ -61,7 +61,7 @@ module.exports = {
 const client = {
   
   entry: {
-    'client': './src/client/index.js'
+    'client': ['babel-polyfill','./src/client/index.js']
   },
   target: 'node',
   mode: "development",

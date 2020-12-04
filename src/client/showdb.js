@@ -28,6 +28,7 @@ class ShowDB extends Component{
     }
 
     stateRefresh(){
+        console.log("stateRefresh");
         this.setState({
             dbdatas:""
         });
@@ -57,6 +58,8 @@ class ShowDB extends Component{
         this.setState({
             open:true
         });
+        this.stateRefresh()
+        //내냉장고누르는 시점에서 DB 다시 조회
     }
     handleClose() {
         this.setState({
@@ -70,7 +73,7 @@ class ShowDB extends Component{
                 <Button variant="contained" className="btn-db" onClick={this.handleClickOpen}> 
                 <StorefrontIcon fontSize="large" className="btn-db-icon"></StorefrontIcon>내 냉장고
                 </Button>
-                <Dialog open ={this.state.open} onClose={this.handleClose}>
+                <Dialog open ={this.state.open} onClose={this.handleClose }>
                     <DialogTitle>냉장고 조회</DialogTitle>
                     <DialogContent>
                            <TableHead>
