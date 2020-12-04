@@ -11,5 +11,17 @@
 빌드, 배포  : AWS S3 + CloudFront
 
 
+테스트실행 
+
+  1. npm install 
+  
+  2. npm run build
+  
+  3. npm run start 
+  
+
+  
+  
+
 
 
