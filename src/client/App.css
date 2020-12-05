@@ -22,7 +22,7 @@ body{
 
 .showApp {
 	grid-area: 1 / 2 / 2 / 4;
-	width: 137px;
+	width: 400px;
 	height: 40px;
 	place-self: end start;
 }
@@ -173,7 +173,9 @@ div.btn-upload{
   -webkit-animation: fadein 3s;
 }
 .btn-showDB{
+  display :flex;
   margin-left: 50px;
+  justify-content: space-between;
 }
 
 .goToBack{
@@ -182,6 +184,9 @@ div.btn-upload{
   margin-left: 10px;
 }
 
+.MuiDialog-paper{
+  height: 400px;
+}
 
 @-webkit-keyframes fadein { /* Safari and Chrome */
   from {

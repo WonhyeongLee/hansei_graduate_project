@@ -9,9 +9,8 @@ import { DialogContentText, TableBody, TableHead } from '@material-ui/core';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import ShowData from './showdb_body';
-import axios from "axios";
+import RecommandFood from './RecommandFood';
 
-require("@babel/polyfill");
 
 
 
@@ -20,9 +19,11 @@ class ShowDB extends Component{
         super(props);
         this.state = {
             dbdatas:"",
-            open:false
+            openL:false,
+            openR:false,
         }
-        this.handleClickOpen = this.handleClickOpen.bind(this)
+        this.handleClickOpenL = this.handleClickOpenL.bind(this);
+        this.handleClickOpenR = this.handleClickOpenR.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.stateRefresh = this.stateRefresh.bind(this);
     }
@@ -54,26 +55,33 @@ class ShowDB extends Component{
         this.getDatas()
     }
 
-    handleClickOpen(){
-        this.setState({
-            open:true
-        });
+    handleClickOpenL(){
         this.stateRefresh()
-        //내냉장고누르는 시점에서 DB 다시 조회
+        this.setState({openL:true})
+        //누르는 시점에서 DB 다시 조회 , 내냉장고 모달 컨트롤
+    }
+
+    handleClickOpenR(){
+        console.log("R눌림");
+        this.stateRefresh()
+        this.setState({openR:true})
+        //누르는 시점에서 DB 다시 조회 , 음식추천 모달 컨트롤
     }
     handleClose() {
-        this.setState({
-            open:false
-        })
+            if(this.state.openL === true) 
+                this.setState({openL : false})
+            else
+                console.log("이 로그가 찍힌다면 문제있음");
+                this.setState({openR : false})
         }
 
     render(){
         return(
            <div className="btn-showDB">
-                <Button variant="contained" className="btn-db" onClick={this.handleClickOpen}> 
+                <Button variant="contained" className="btn-db" onClick={this.handleClickOpenL}> 
                 <StorefrontIcon fontSize="large" className="btn-db-icon"></StorefrontIcon>내 냉장고
                 </Button>
-                <Dialog open ={this.state.open} onClose={this.handleClose }>
+                <Dialog open ={this.state.openL} onClose={this.handleClose }>
                     <DialogTitle>냉장고 조회</DialogTitle>
                     <DialogContent>
                            <TableHead>
@@ -92,12 +100,12 @@ class ShowDB extends Component{
                            </TableBody>
                     </DialogContent>
                 </Dialog>
+                <RecommandFood dbdatas={this.state.dbdatas} openR={this.state.openR} handleClose={this.handleClose}
+                                handleClickOpenR={this.handleClickOpenR}
+                />
            </div>
         )
     }
-
-
 }
-
 
 export default ShowDB;

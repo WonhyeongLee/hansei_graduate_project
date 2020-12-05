@@ -3,11 +3,12 @@ import Select from 'react-select';
 import Button from '@material-ui/core/Button';
 import { groupedOptions } from './datas';
 import Recomand from './recomand';
+import { Height } from '@material-ui/icons';
 
 const groupStyles = {
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'space-between'
 };
 const groupBadgeStyles = {
   backgroundColor: '#EBECF0',
@@ -23,7 +24,7 @@ const groupBadgeStyles = {
 };
 
 const formatGroupLabel = data => (
-  <div style={groupStyles}>
+  <div style={groupStyles} className="formatGroup">
     <span>{data.label}</span>
     <span style={groupBadgeStyles}>{data.options.length}</span>
   </div>
@@ -34,7 +35,8 @@ class Selects extends React.Component {
   constructor(props){
     super(props);
   this.state = {
-    selectedOption: []
+    selectedOption: [],
+    foodValue : [],
   };
 
 }
@@ -44,7 +46,8 @@ class Selects extends React.Component {
   };
  
   render() {
-    const { selectedOption } = this.state;
+    const { selectedOption } = this.state.selectedOption;
+    console.log(this.props.foodValue); //넘긴 데이터
  
   return(
     

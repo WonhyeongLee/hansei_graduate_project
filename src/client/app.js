@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import ShowDB from './showdb';
 import UploadImage from './UploadImage';
-import ResultData from './foodRecognition';
-import RecommandFood from './recommand_food';
+
+
 
 
 export default class App extends Component{
@@ -20,10 +20,11 @@ constructor(props){
         return (
             <div className="container">
 
-              <div className="showApp">
-                  <ShowDB />
-              </div>
-              <div className="uploadApp">
+            <div className="showApp">
+                <ShowDB />
+
+            </div>
+            <div className="uploadApp">
                 <UploadImage />
                 </div>
                 <div className="recommandApp">

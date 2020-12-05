@@ -38,7 +38,7 @@ render(){
          <div className="uploadContainer">
                 <h1 className="heading">음식 저장</h1>
                 <div className="img-holder">
-                    <img src={imagePreview} classname="img" id="img" alt="" width="200px" height="200px" ref={(ref) => {this.img =ref}} /> 
+                    <img src={imagePreview} className="img" id="img" alt="" width="200px" height="200px" ref={(ref) => {this.img =ref}} /> 
                     {/* ref 쓴이유 : img 태그 내용을 가져다 텐서플로우에 넣어줘야 동작해서 */}
                 </div>
                   <input type="file" id="file" accept="image/*" name="image-upload"
@@ -65,7 +65,6 @@ render(){
                                                 setDefaultImage={this._setDefaltImage}
                                                 resultPercent={this.state.classPrediction}/> : console.log("사진이없습니다") }
          </div>
-         {/* <Route path="/result" component={ResultData} /> */}
         </div>
     )
 }
