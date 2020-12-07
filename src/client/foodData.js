@@ -172,21 +172,21 @@ export const 탕수육 = [
 
 
 export const 음식=[
-	{value: 탕수육, label:'탕수육'},
-	{value: 불고기, label:'불고기'},
-	{value: 계란찜, label:'계란찜'},
-	{value: 계란말이, label:'계란말이'},
-	{value: 된장국, label:'된장국'},
-	{value: 된장찌개, label:'된장찌개'},
-	{value: 고추장찌개, label:'고추장찌개'},
-	{value: 제육볶음, label:'제육볶음'},
-	{value: 낙지볶음, label:'낙지볶음'},
-	{value: 해물파전, label:'해물파전'},
-	{value: 김치전, label:'김치전'},
-	{value: 콩국수, label:'콩국수'},
-	{value: 화채, label:'화채'},
-	{value: 골뱅이소면, label:'골뱅이소면'},
-	{value: 삶은계란, label:'삶은계란'}
+	{value: 탕수육, label:'탕수육', link:'https://www.10000recipe.com/recipe/list.html?q=탕수육&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 불고기, label:'불고기', link:'https://www.10000recipe.com/recipe/list.html?q=불고기&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 계란찜, label:'계란찜', link:'https://www.10000recipe.com/recipe/list.html?q=계란찜&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 계란말이, label:'계란말이', link:'https://www.10000recipe.com/recipe/list.html?q=계란말이&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 된장국, label:'된장국', link:'https://www.10000recipe.com/recipe/list.html?q=된장국&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 된장찌개, label:'된장찌개', link:'https://www.10000recipe.com/recipe/list.html?q=된장찌개&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 고추장찌개, label:'고추장찌개', link:'https://www.10000recipe.com/recipe/list.html?q=고추장찌개&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 제육볶음, label:'제육볶음', link:'https://www.10000recipe.com/recipe/list.html?q=제육볶음&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 낙지볶음, label:'낙지볶음', link:'https://www.10000recipe.com/recipe/list.html?q=낙지볶음&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 해물파전, label:'해물파전', link:'https://www.10000recipe.com/recipe/list.html?q=해물파전&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 김치전, label:'김치전', link:'https://www.10000recipe.com/recipe/list.html?q=김치전&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 콩국수, label:'콩국수', link:'https://www.10000recipe.com/recipe/list.html?q=콩국수&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 화채, label:'화채', link:'https://www.10000recipe.com/recipe/list.html?q=화채&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 골뱅이소면, label:'골뱅이소면', link:'https://www.10000recipe.com/recipe/list.html?q=골뱅이소면&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='},
+	{value: 삶은계란, label:'삶은계란', link:'https://www.10000recipe.com/recipe/list.html?q=삶은계란&query=&cat1=&cat2=&cat3=&cat4=&fct=&order=accuracy&lastcate=order&dsearch=&copyshot=&scrap=&degree=&portion=&time=&niresource='}
 ];
 
 

@@ -73,11 +73,11 @@ class Recomand extends Component{
 
             if(cnt2==lists.length){
         
-        최종추천음식.push(추천음식[m].label);
+        최종추천음식.push(추천음식[m]);
             }
 
         for(var c=0; c<최종추천음식.length; c++){
-        lists3.push(<li>{최종추천음식[c]}</li>)
+        lists3.push(<li><a href={최종추천음식[c].link}>{최종추천음식[c].label}</a></li>)
         }
        }           
     return(
