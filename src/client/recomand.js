@@ -2,11 +2,14 @@ import React, {Component} from 'react';
 import {음식} from './foodData';
 
 class Recomand extends Component{
-   
+
+     
     render(){   
 
         var lists=[];
         var lists2=[];
+        var lists3=[];
+
 
         var data = this.props.data;
         var food= this.props.food;
@@ -70,13 +73,16 @@ class Recomand extends Component{
 
             if(cnt2==lists.length){
         
-        최종추천음식.push(<li>{추천음식[m].label}</li>);
-            }   
+        최종추천음식.push(추천음식[m].label);
+            }
+
+        for(var c=0; c<최종추천음식.length; c++){
+        lists3.push(<li>{최종추천음식[c]}</li>)
+        }
        }           
     return(
-            <div>                
-                <br></br>
-                {최종추천음식}
+            <div>     
+                {lists3}           
             </div>
 
         );
