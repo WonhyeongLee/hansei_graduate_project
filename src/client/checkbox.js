@@ -36,18 +36,17 @@ class Selects extends React.Component {
     super(props);
   this.state = {
     selectedOption: [],
-    foodValue : [],
+    foodValue: []
   };
 
 }
   handleChange = selectedOption => {
     this.setState({ selectedOption });
-   console.log(this.state.selectedOption);
   };
  
   render() {
     const { selectedOption } = this.state.selectedOption;
-    console.log(this.props.foodValue); //넘긴 데이터
+    console.log(this.props.foodValue); //넘긴 데이터 
  
   return(
     
@@ -62,7 +61,9 @@ class Selects extends React.Component {
     onChange={this.handleChange}
     value={selectedOption}
   />
-  <Recomand data={this.state.selectedOption}/>
+  <Recomand 
+  data={this.state.selectedOption} 
+  food={this.props.foodValue}/>
     </div>
   );
 }
