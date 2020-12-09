@@ -4,12 +4,6 @@ import App from './app';
 // import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 require('./App.css');
 
-// const theme = createMuiTheme({
-//     typography: {
-//         fontFamily: ('spoqa Han Sans'),
-//     },
-// });
-
 ReactDOM.render(
     // <MuiThemeProvider theme={theme}>
     <App />

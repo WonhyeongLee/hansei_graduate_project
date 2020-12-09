@@ -37,7 +37,7 @@ class ShowDB extends Component{
     }
 
     getDatas = async () =>{
-        const foods = await fetch("http://localhost:3002/db",{
+        const foods = await fetch("https://hansei-project.herokuapp.com/db",{
             method: "get", 
             headers: {
               "content-type": "application/json",

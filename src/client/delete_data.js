@@ -4,7 +4,7 @@ import axios from 'axios';
 class DBDelete extends Component {
     async deleteData(id){
         console.log("삭제버튼 눌림 : " + id);
-        const url = "http://localhost:3002/db/" +id;
+        const url = "https://hansei-project.herokuapp.com/db/" +id;
         //await axios 이용 , 삭제버튼 누를 때 데이터를 받기전에 화면이 새로고침되는 문제 해결 
         await axios({
             method: 'DELETE',
