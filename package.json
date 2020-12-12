@@ -12,6 +12,7 @@
     "clean": "rimraf dist node_modules",
     "test": "jest ./src"
   },
+  "homepage": "https://hansei-graduate-project.netlify.app/",
   "keywords": [
     "Node",
     "React"

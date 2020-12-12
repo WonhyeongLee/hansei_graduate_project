@@ -72,7 +72,7 @@ const client = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist/'),
-    publicPath: "/dist/"
+    publicPath: "/"
   },
   plugins: [
     new HtmlWebPackPlugin({
