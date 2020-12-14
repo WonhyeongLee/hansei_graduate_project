@@ -81,7 +81,7 @@ class ShowDB extends Component{
                 <Button variant="contained" className="btn-db" onClick={this.handleClickOpenL}> 
                 <StorefrontIcon fontSize="large" className="btn-db-icon"></StorefrontIcon>내 냉장고
                 </Button>
-                <Dialog open ={this.state.openL} onClose={this.handleClose }>
+                <Dialog open ={this.state.openL} onClose={this.handleClose } fullWidth={"true"}>
                     <DialogTitle>냉장고 조회</DialogTitle>
                     <DialogContent>
                            <TableHead>
