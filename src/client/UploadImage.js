@@ -5,6 +5,7 @@ import SaveIcon from "@material-ui/icons/Save";
 import ResultData from './foodRecognition';
 import * as tf from '@tensorflow/tfjs';
 import * as tmImage from '@teachablemachine/image';
+import photo from './Photo.png';
 
 // import axios from 'axios';
 
@@ -13,7 +14,7 @@ class UploadImage extends Component {
      super(props);
     this.state = {
         selectedFile: null,
-        imagePreview: "../../dist/Photo.png",
+        imagePreview: photo,
         resultDivState : false,
         maxPredictions : null,
         prediction : null,

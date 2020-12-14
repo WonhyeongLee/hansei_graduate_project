@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import { post } from 'axios';
 import SaveIcon from '@material-ui/icons/Save';
-import App from './app';
+import photo from './Photo.png';
 
 // 나중에 contextAPI 적용해서 DB에 저장하는 부분을 SaveData.js 로 분리해야함
 // DB 조회 (리셋) 하는걸 최상위 컴포넌트로 옮겨서 리덕스를 사용해서 분리해야함
@@ -74,7 +74,7 @@ export default function ResultData(props) {
         func(state)
     }
     const resetImage = () => {
-        let img = "../../dist/Photo.png"
+        let img = "photo"
         setDefaultImage(img)
     }
 
