@@ -42,7 +42,7 @@ render(){
                     <img src={imagePreview} className="img" id="img" alt="" width="200px" height="200px" ref={(ref) => {this.img =ref}} /> 
                     {/* ref 쓴이유 : img 태그 내용을 가져다 텐서플로우에 넣어줘야 동작해서 */}
                 </div>
-                  <input type="file" id="file" accept="image/*" name="image-upload"
+                  <input type="file" id="file" capture="camera" accept="image/*" name="image-upload"
                                     onChange={this.fileSelectedHandler} />
 
                   <div className="label">
