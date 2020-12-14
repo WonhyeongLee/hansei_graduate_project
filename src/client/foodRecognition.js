@@ -74,7 +74,7 @@ export default function ResultData(props) {
         func(state)
     }
     const resetImage = () => {
-        let img = "photo"
+        let img = photo;
         setDefaultImage(img)
     }
 
