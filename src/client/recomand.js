@@ -6,13 +6,13 @@ class Recomand extends Component {
 
     render() {
 
-        var lists = []; // 냉장고 재료를 저장
-        var lists2 = []; //태그 배열을 저장
+        var lists = []; // 태그내용 저장
+        var lists2 = []; //냉장고배열 저장
         var lists3 = []; //최종 추천음식을 저장
 
 
-        var data = this.props.data; //냉장고 재료를 받아옴
-        var food = this.props.food; //선택한 태그의 배열을 받아옴
+        var data = this.props.data; //태그 배열을 받아옴
+        var food = this.props.food; //냉장고 재료 배열을 받아옴
         var z = 0;
         var p = 0;
 
@@ -28,11 +28,11 @@ class Recomand extends Component {
                 z++;
             }
         }
-        // 태그가 비어있을경우 lists2 배열에 empty를 푸쉬
+        // 냉장고 재료가 비어있을경우 lists2 배열에 empty를 푸쉬
         if (food == null) { 
             return lists2.push(<h1>empty</h1>);
         }
-        //태그 내용을 lists2 배열에 넣고 콘솔에 출력
+        //냉장고 재료배열을 lists2 배열에 넣고 콘솔에 출력
         else {
             while (p < food.length) { 
                 lists2.push(food[p]);
@@ -59,6 +59,7 @@ class Recomand extends Component {
             if (cnt >= 음식[j].value.length * 0.6) {
 
                 추천음식.push(음식[j]);
+                console.log("추천음식"+음식[j]);
             }
         }
         
@@ -83,10 +84,11 @@ class Recomand extends Component {
                 최종추천음식.push(추천음식[m]);
             }
 
-            // lists3에 최종추천음식들을 저장
-            for (var c = 0; c < 최종추천음식.length; c++) {
-                lists3.push(<li><a href={최종추천음식[c].link}>{최종추천음식[c].label}</a></li>)
-            }
+          
+        }
+          // lists3에 최종추천음식들을 저장
+          for (var c = 0; c < 최종추천음식.length; c++) {
+            lists3.push(<li><a href={최종추천음식[c].link}>{최종추천음식[c].label}</a></li>)
         }
         return (
             <div>
