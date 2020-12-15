@@ -6,7 +6,6 @@ export const 탕수육 = [
 	{tag: '단맛', ingredient:'오이'},
 	{tag: '기름짐', ingredient:'버섯'},
 	{tag: null, ingredient:'당근'},
-	{tag: null, ingredient:'식용유'},
 	{tag: null, ingredient:'파인애플'}
 	];
 	
@@ -15,7 +14,7 @@ export const 탕수육 = [
 		{tag: '점심', ingredient:'양파'},
 		{tag: '저녁', ingredient:'대파'},
 		{tag: '단맛', ingredient:'마늘'},
-		{tag: '볶음', ingredient:'느타리버섯'},
+		{tag: '볶음', ingredient:'버섯'},
 		{tag: null, ingredient:'당근'},
 		{tag: null, ingredient:'간장'},
 		{tag: null, ingredient:'설탕'}
@@ -27,9 +26,6 @@ export const 탕수육 = [
 		{tag: '찜', ingredient:'양파'},
 		{tag: '단맛', ingredient:'당근'},
 		{tag: null, ingredient:'대파'},
-		{tag: null, ingredient:'간장'},
-		{tag: null, ingredient:'미림'},
-		{tag: null, ingredient:'설탕'},
 		{tag: null, ingredient:'마늘'},
 		{tag: null, ingredient:'생강'},
 		{tag: null, ingredient:'대추'},
@@ -38,16 +34,16 @@ export const 탕수육 = [
 	
 	export const 계란찜 = [
 		{tag: '추울때', ingredient:'계란'},
-		{tag: '아침', ingredient:'파'},
-		{tag: '찜', ingredient:'소금'},
-		{tag: '담백함', ingredient:'소금'}
+		{tag: '아침', ingredient:'대파'},
+		{tag: '찜', ingredient:null},
+		{tag: '담백함', ingredient:null}
 		];
 
 	export const 계란말이 = [
 		{tag: null, ingredient:'계란'},
-		{tag: '아침', ingredient:'파'},
-		{tag: '구이', ingredient:'설탕'},
-		{tag: null, ingredient:'소금'}
+		{tag: '아침', ingredient:'대파'},
+		{tag: '구이', ingredient:null},
+		{tag: null, ingredient:null}
 		];
 	
 	export const 된장국 = [
@@ -55,8 +51,7 @@ export const 탕수육 = [
 		{tag: '아침', ingredient:'두부'},
 		{tag: '국', ingredient:'양파'},
 		{tag: null, ingredient:'대파'},
-		{tag: null, ingredient:'느타리버섯'},
-		{tag: null, ingredient:'팽이버섯'},
+		{tag: null, ingredient:'버섯'},
 		{tag: null, ingredient:'된장'},
 		{tag: null, ingredient:'마늘'}
 		];
@@ -66,8 +61,7 @@ export const 탕수육 = [
 		{tag: '점심', ingredient:'두부'},
 		{tag: '찌개', ingredient:'양파'},
 		{tag: '추울때', ingredient:'대파'},
-		{tag: '매운맛', ingredient:'느타리버섯'},
-		{tag: '얼큰함', ingredient:'팽이버섯'},
+		{tag: '매운맛', ingredient:'버섯'},
 		{tag: null, ingredient:'된장'},
 		{tag: null, ingredient:'고춧가루'},
 		{tag: null, ingredient:'감자'},
@@ -79,9 +73,8 @@ export const 탕수육 = [
 		{tag: '점심', ingredient:'두부'},
 		{tag: '찌개', ingredient:'양파'},
 		{tag: '추울때', ingredient:'대파'},
-		{tag: '매운맛', ingredient:'느타리버섯'},
-		{tag: '얼큰함', ingredient:'팽이버섯'},
-		{tag: null, ingredient:'고추장'},
+		{tag: '매운맛', ingredient:'버섯'},
+		{tag: '얼큰함', ingredient:'고추장'},
 		{tag: null, ingredient:'고춧가루'},
 		{tag: null, ingredient:'감자'},
 		{tag: null, ingredient:'마늘'}
@@ -91,9 +84,8 @@ export const 탕수육 = [
 		{tag: '저녁', ingredient:'돼지고기'},
 		{tag: '점심', ingredient:'양파'},
 		{tag: '볶음', ingredient:'대파'},
-		{tag: null, ingredient:'간장'},
 		{tag: '매운맛', ingredient:'올리고당'},
-		{tag: '기름짐', ingredient:'설탕'},
+		{tag: '기름짐', ingredient:null},
 		{tag: null, ingredient:'고추장'},
 		{tag: null, ingredient:'고춧가루'},
 		{tag: null, ingredient:'참기름'}
@@ -103,19 +95,18 @@ export const 탕수육 = [
 			{tag: '저녁', ingredient:'낙지'},
 			{tag: '점심', ingredient:'콩나물'},
 			{tag: '볶음', ingredient:'청양고추'},
-			{tag: null, ingredient:'간장'},
+			{tag: null, ingredient:null},
 			{tag: '매운맛', ingredient:'양파'},
 			{tag: '기름짐', ingredient:'부추'},
 			{tag: null, ingredient:'밀가루'},
 			{tag: null, ingredient:'고춧가루'},
-			{tag: null, ingredient:'설탕'},
 			{tag: null, ingredient:'마늘'},
 			{tag: null, ingredient:'고추장'},
 			{tag: null, ingredient:'참기름'}
 			];
 	
 		export const 해물파전 = [
-			{tag: '부침', ingredient:'쪽파'},
+			{tag: '부침', ingredient:'대파'},
 			{tag: '점심', ingredient:'오징어'},
 			{tag: '저녁', ingredient:'청양고추'},
 			{tag: '비가올때', ingredient:'계란'},
@@ -136,7 +127,7 @@ export const 탕수육 = [
 			{tag: '점심', ingredient: '오이'},
 			{tag: '저녁', ingredient:'토마토'},
 			{tag: null, ingredient:'소면'},
-			{tag: null, ingredient:'소금'},
+			{tag: null, ingredient:null},
 			{tag: null, ingredient: null},
 			{tag: null, ingredient: null}
 			];	
@@ -158,7 +149,6 @@ export const 탕수육 = [
 				{tag: null, ingredient: '마늘'},
 				{tag: null, ingredient: '고추장'},
 				{tag: null, ingredient: '초고추장'},
-				{tag: null, ingredient: '설탕'},
 				{tag: null, ingredient: '참기름'}
 				];
 
