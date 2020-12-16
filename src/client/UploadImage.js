@@ -2,7 +2,7 @@ import React ,{Component}from 'react';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import { Button } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
-import ResultData from './foodRecognition';
+import ResultData from './ResultData';
 import * as tf from '@tensorflow/tfjs';
 import * as tmImage from '@teachablemachine/image';
 import photo from './Photo.png';
