@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 
-const db_info = { 
+const db_info = {
     host:'hansei.c0ge5afzoxmy.us-east-2.rds.amazonaws.com',
     port:'3306',
     user:'kkwon57',
@@ -8,14 +8,14 @@ const db_info = {
     database:'hansei'
 };
 
-module.exports = {
+module.exports ={
     init: function(){
         return mysql.createConnection(db_info);
     },
     connect: function(conn){
         conn.connect(function(err){
-            if(err) console.log('mysql 접속에러 :' +err)
-            else console.log('접속성공');
-        })
+            if(err) console.error('mysql 접속 에러 : '+ err);
+            else console.log('mysql 접속 성공');
+        });
     }
 }

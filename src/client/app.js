@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ShowDB from './AppHeader';
+import ShowDB from './showdb';
 import UploadImage from './UploadImage';
 
 

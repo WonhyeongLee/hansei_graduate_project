@@ -1,7 +1,7 @@
 import React from 'react';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import DBDelete from './DeleteData';
+import DBDelete from './delete_data';
 
 class ShowData extends React.Component {
     render() {

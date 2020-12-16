@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { DialogContentText, TableBody, TableHead } from '@material-ui/core';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import ShowData from './ShowData';
+import ShowData from './showdb_body';
 import RecommandFood from './RecommandFood';
 
 
@@ -35,13 +35,12 @@ class ShowDB extends Component{
         });
         this.getDatas();
     }
-    // https://hansei-project.herokuapp.com/db
+
     getDatas = async () =>{
-        const foods = await fetch("https://hansei-graduate-project.herokuapp.com/db",{
+        const foods = await fetch("https://hansei-project.herokuapp.com/db",{
             method: "get", 
             headers: {
               "content-type": "application/json",
-              "Access-Control-Allow-Origin" : "*",
             },
             body: JSON.stringify(),
 
@@ -89,6 +88,7 @@ class ShowDB extends Component{
                                 <TableRow>
                                     <TableCell>번호</TableCell>
                                     <TableCell>이름</TableCell>
+                                    <TableCell>종류</TableCell>
                                     <TableCell>수량</TableCell>
                                     <TableCell>옵션</TableCell>
                                 </TableRow>

@@ -38,14 +38,14 @@ app.get("/db", (req,res)=>{
 })
 //DB에 데이터 추가하는 부분
 app.post('/db/items', upload.array(), (req,res) => {
-    let sql = 'INSERT INTO refrigerater VALUE(?,?,?)';
+    let sql = 'INSERT INTO refrigerater VALUE(?,?,?,?)';
     let name = req.body.name;
     let value = req.body.value;
 
     console.log(name);
     console.log(req.body.value);
 
-    let params = [null,name,value];
+    let params = [null,name,'테스트',value];
     conn.query(sql,params,
         (err,rows,fields)=>{
             res.send(rows);
