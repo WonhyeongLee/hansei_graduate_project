@@ -41,6 +41,7 @@ class ShowDB extends Component{
             method: "get", 
             headers: {
               "content-type": "application/json",
+              "Access-Control-Allow-Origin" : "*",
             },
             body: JSON.stringify(),
 
