@@ -9,3 +9,13 @@ module.exports = function (app) {
     })
   );
 };
+
+module.exports = function (app) {
+    app.use(
+      "/db/items",
+      createProxyMiddleware({
+        target: "https://hansei-project.herokuapp.com",
+        changeOrigin: true,
+      })
+    );
+  };
