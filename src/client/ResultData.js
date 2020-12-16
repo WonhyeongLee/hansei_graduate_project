@@ -50,7 +50,7 @@ export default function ResultData(props) {
     };
     //DB에 INSERT 하는 함수 
     const addItems = () => {
-        const url = "https://hansei-project.herokuapp.com/db/items";
+        const url = "http://172.30.1.53/db/items";
         const formData = new FormData();
         formData.append('name',name)
         formData.append('value',value)
