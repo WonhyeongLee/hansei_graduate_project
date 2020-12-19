@@ -35,9 +35,9 @@ class ShowDB extends Component{
         });
         this.getDatas();
     }
-
+    // "https://hansei-project.herokuapp.com/db"
     getDatas = async () =>{
-        const foods = await fetch("https://hansei-project.herokuapp.com/db",{
+        const foods = await fetch("https://project-server-pdopf.run.goorm.io/db",{
             method: "get", 
             headers: {
               "content-type": "application/json",
@@ -71,7 +71,6 @@ class ShowDB extends Component{
             if(this.state.openL === true) 
                 this.setState({openL : false})
             else
-                console.log("이 로그가 찍힌다면 문제있음");
                 this.setState({openR : false})
         }
 
@@ -81,21 +80,20 @@ class ShowDB extends Component{
                 <Button variant="contained" className="btn-db" onClick={this.handleClickOpenL}> 
                 <StorefrontIcon fontSize="large" className="btn-db-icon"></StorefrontIcon>내 냉장고
                 </Button>
-                <Dialog open ={this.state.openL} onClose={this.handleClose } fullWidth={"true"}>
+                <Dialog open ={this.state.openL} onClose={this.handleClose }>
                     <DialogTitle>냉장고 조회</DialogTitle>
                     <DialogContent>
                            <TableHead>
                                 <TableRow>
                                     <TableCell>번호</TableCell>
                                     <TableCell>이름</TableCell>
-                                    <TableCell>종류</TableCell>
                                     <TableCell>수량</TableCell>
                                     <TableCell>옵션</TableCell>
                                 </TableRow>
                            </TableHead>
                            <TableBody>
                                 {this.state.dbdatas ? this.state.dbdatas.map(c=>{
-                                    return <ShowData stateRefresh={this.stateRefresh} id={c.id} food={c.food} type={c.type} quantity={c.quantity} /> 
+                                    return <ShowData stateRefresh={this.stateRefresh} id={c.id} food={c.food} quantity={c.quantity} /> 
                                 }):""}
                            </TableBody>
                     </DialogContent>

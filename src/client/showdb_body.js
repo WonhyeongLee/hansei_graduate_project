@@ -9,7 +9,6 @@ class ShowData extends React.Component {
     <TableRow>
     <TableCell>{this.props.id}</TableCell>
     <TableCell>{this.props.food}</TableCell>
-    <TableCell>{this.props.type}</TableCell>
     <TableCell>{this.props.quantity}</TableCell>
     <TableCell><DBDelete stateRefresh={this.props.stateRefresh} id={this.props.id}/></TableCell>
     </TableRow>

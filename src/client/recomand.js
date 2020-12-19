@@ -56,7 +56,7 @@ class Recomand extends Component {
                 }
             }
 
-            if (cnt >= 음식[j].value.length * 0.6) {
+            if (cnt >= 음식[j].value.length * 0.5) {
 
                 추천음식.push(음식[j]);
                 console.log("추천음식"+음식[j]);

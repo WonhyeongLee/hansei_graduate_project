@@ -49,8 +49,9 @@ export default function ResultData(props) {
         })
     };
     //DB에 INSERT 하는 함수 
+    // "https://hansei-project.herokuapp.com/db/items"
     const addItems = () => {
-        const url = "https://hansei-project.herokuapp.com/db/items";
+        const url = "https://project-server-pdopf.run.goorm.io/db/items";
         const formData = new FormData();
         formData.append('name',name)
         formData.append('value',value)

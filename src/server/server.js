@@ -15,15 +15,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api',api);
-
-app.use('/image' , (req,res) =>{
-    if(!req){
-        res.send("Fail to Upload image");
-    }
-    res.send("success upload image");
-});
-
 app.get("/db", (req,res)=>{
     const sql = "SELECT * FROM refrigerater";
     conn.query(sql,function(err,rows,fields){
@@ -38,14 +29,14 @@ app.get("/db", (req,res)=>{
 })
 //DB에 데이터 추가하는 부분
 app.post('/db/items', upload.array(), (req,res) => {
-    let sql = 'INSERT INTO refrigerater VALUE(?,?,?,?)';
+    let sql = 'INSERT INTO refrigerater VALUE(?,?,?)';
     let name = req.body.name;
     let value = req.body.value;
 
     console.log(name);
     console.log(req.body.value);
 
-    let params = [null,name,'테스트',value];
+    let params = [null,name,value];
     conn.query(sql,params,
         (err,rows,fields)=>{
             res.send(rows);
